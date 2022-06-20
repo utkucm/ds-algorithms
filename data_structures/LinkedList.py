@@ -144,10 +144,13 @@ class LinkedList:
 if __name__ == "__main__":
     llist = LinkedList()
 
-    llist.append(1)
-    llist.push(2)
     llist.push(1)
-    llist.append(5)
+    llist.push(2)
+    llist.push(3)
+    llist.push(4)
 
     llist.insert_after(llist.head.next, 3)
+    llist.print_list()
+    print('-----------------------------------------------------')
+    llist.delete_node(1)
     llist.print_list()
