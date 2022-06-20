@@ -1,6 +1,6 @@
 class Node:
 
-    def __init__(self, data) -> None:
+    def __init__(self, data, next=None, prev=None) -> None:
         '''
         Initialize a node with data and next as None
 
@@ -11,4 +11,5 @@ class Node:
             None
         '''
         self.data = data
+        self.prev = prev
         self.next = None
