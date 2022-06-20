@@ -15,6 +15,72 @@ class LinkedList:
         '''
         self.head = None
 
+    def detect_loop(self) -> bool:
+        '''
+        Detect if the linked list has a loop
+
+        Parameters:
+            None
+
+        Returns:
+            loop (bool): True if the linked list has a loop, False otherwise
+        '''
+        # Initialize slow and fast pointers
+        s = set()
+        temp = self.head
+
+        while temp:
+            # If the head is in the set, then there is a loop
+            if temp in s:
+                return True
+
+            # Add the node to the set
+            s.add(temp)
+
+            # Continue to traversal
+            temp = temp.next
+
+        return False
+
+    def get_count(self) -> int:
+        '''
+        Get the count of the linked list
+
+        Parameters:
+            None
+
+        Returns:
+            count (int): count of the linked list
+        '''
+        # Initialize count
+        temp = self.head
+        count = 0
+
+        # Traverse the list and increment the count
+        while temp:
+            count += 1
+            temp = temp.next
+
+        # Return the count
+        return count
+
+    def get_count_rec(self, node) -> int:
+        '''
+        Get the count of the linked list
+
+        Parameters:
+            node (Node): node to be counted
+
+        Returns:
+            count (int): count of the linked list
+        '''
+        # If the node is None, then return 0
+        if node is None:
+            return 0
+
+        # Return 1 + count of the next node
+        return 1 + self.get_count_rec(node.next)
+
     def push(self, new_data) -> None:
         '''
         Insert a new node at the beginning of the linked list.
