@@ -164,5 +164,5 @@ if __name__ == '__main__':
     dllist.delete_node(dllist.head.next)
     dllist.delete_node(dllist.head.next)
 
-    print('\nDoubly Linked List after removal of nodes: ', end='\n')
+    print('\nDoubly Linked List after removing of nodes: ', end='\n')
     dllist.print_list(dllist.head)
